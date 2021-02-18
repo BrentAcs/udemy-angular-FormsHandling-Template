@@ -12,10 +12,15 @@
               ngModel
               name="username"
               required
-              #username="ngModel">
-            <span class="help-block" *ngIf="!username.valid && username.touched">Please enter a Username!</span>
+              #username="ngModel"
+            />
+            <span class="help-block" *ngIf="!username.valid && username.touched"
+              >Please enter a Username!</span
+            >
           </div>
-          <button class="btn btn-default" type="button">Suggest an Username</button>
+          <button class="btn btn-default" type="button">
+            Suggest an Username
+          </button>
           <div class="form-group">
             <label for="email">Mail</label>
             <input
@@ -26,10 +31,15 @@
               name="email"
               required
               email
-              #email="ngModel">
-            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+              #email="ngModel"
+            />
+            <span class="help-block" *ngIf="!email.valid && email.touched"
+              >Please enter a valid email!</span
+            >
           </div>
-          <p *ngIf="!userData.valid && userData.touched">User Data is Invalid!</p>
+          <p *ngIf="!userData.valid && userData.touched">
+            User Data is Invalid!
+          </p>
           <!-- <p *ngIf="">Please enter a valid value</p> -->
         </div>
         <div class="form-group">
@@ -38,7 +48,8 @@
             id="secret"
             class="form-control"
             [ngModel]="defaultQuestion"
-            name="secret">
+            name="secret"
+          >
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
@@ -46,17 +57,28 @@
         <div class="form-group">
           <label for="questionAnswer">Please specify questionn answer.</label>
           <textarea
-          name="questionAnswer"
-          id=""
-          rows="3"
-          class="form-control"
-          [(ngModel)]="answer"></textarea>
-          <p>Your reply: {{ answer }}</p>
+            name="questionAnswer"
+            id=""
+            rows="3"
+            class="form-control"
+            [(ngModel)]="answer"
+          ></textarea>
         </div>
-        <button
-         class="btn btn-primary"
-         type="submit"
-         [disabled]="!f.valid">Submit</button>
+        <p>Your reply: {{ answer }}</p>
+        <div class="radio" *ngFor="let gender of genders" >
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              [ngModel]="genders[0]"
+              [value]=gender
+              required>
+            {{ gender }}
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+          Submit
+        </button>
       </form>
     </div>
   </div>
