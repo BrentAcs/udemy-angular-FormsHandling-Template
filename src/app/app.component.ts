@@ -7,8 +7,9 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  @ViewChild('f') signupForm: NgForm;
-  defaultQuestion = 'pet';
+  @ViewChild("f") signupForm: NgForm;
+  defaultQuestion = "pet";
+  answer = "";
 
   suggestUserName() {
     const suggestedName = "Superuser";
@@ -18,7 +19,7 @@ export class AppComponent {
   //   console.log(form);
   // }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.signupForm);
   }
 }
